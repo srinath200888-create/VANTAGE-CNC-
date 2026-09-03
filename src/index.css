@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Obsidian Theme */
+  --bg: #080A0D;
+  --bg-secondary: #0B0E12;
+  --surface: #0E1116;
+  --surface-raised: #151922;
+  --surface-elevated: #1B2028;
+  --border: #242A33;
+  --border-subtle: #1A1F26;
+  --border-active: #C7A86B;
+  --text-primary: #E8EDF2;
+  --text-secondary: #8C96A3;
+  --text-muted: #5E6875;
+  --text-disabled: #3B434E;
+  --accent: #C7A86B;
+  --accent-soft: rgba(199, 168, 107, 0.14);
+  --accent-strong: #DFC285;
+  --success: #69D39A;
+  --success-soft: rgba(105, 211, 154, 0.14);
+  --warning: #E7B85C;
+  --warning-soft: rgba(231, 184, 92, 0.14);
+  --critical: #E06B6B;
+  --critical-soft: rgba(224, 107, 107, 0.14);
+  --info: #6BA4E0;
+  --info-soft: rgba(107, 164, 224, 0.14);
+  --chart-primary: #C7A86B;
+  --chart-secondary: #8C96A3;
+  --chart-grid: #1A1F26;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Subtle Technical Micro-Grid Pattern (2-4% Opacity) */
+.industrial-grid {
+  background-image: radial-gradient(var(--text-secondary) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  opacity: 0.035;
+}
+
+/* Custom Industrial Scrollbars */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
